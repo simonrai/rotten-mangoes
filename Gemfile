@@ -43,3 +43,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use CarrierWave for image uploads
+gem 'carrierwave'
+
+# Use RMagick for thumbnails
+gem 'rmagick'
