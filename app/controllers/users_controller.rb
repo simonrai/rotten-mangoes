@@ -4,11 +4,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @show = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
 
     if @user.save
-    	session[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to movies_path, notice: "Welcome aboard, #{@user.firstname}!"
     else
       render :new
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation)
+    params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation, :admin)
   end
 
 end

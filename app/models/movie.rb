@@ -9,6 +9,16 @@ class Movie < ActiveRecord::Base
   validates :release_date, presence: true
   validate :release_date_is_in_the_future
 
+  # :scope :ordered_by_release_date, -> { order(release_date: :desc, title: :asc) }
+
+  # :scope :with_director, -> do |director|
+  #   where(director: director)
+  # end
+  
+  # :scope :matching_title, -> do |title|
+  #   where(...)
+  # end 
+
   mount_uploader :poster, PosterUploader
 
   def review_average

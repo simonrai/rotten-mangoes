@@ -4,6 +4,12 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  # def index
+  #   @movies = Movie.ordered_by_release_date
+  #   @movies = @movies.matching_title(params[:title]) if params[:title].present?
+  #   @movies = @movies.with_director(params[:director]) if params[:director].present?
+  # end
+
   def show
     @movie = Movie.find(params[:id])
   end
